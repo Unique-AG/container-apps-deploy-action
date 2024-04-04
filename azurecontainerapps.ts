@@ -558,7 +558,7 @@ export class azurecontainerapps {
         // If both ingress and target port were not provided for an existing Container App, or if ingress is to be disabled,
         // use the 'update' command, otherwise we should use the 'up' command that performs a PATCH operation on the ingress properties.
         this.noIngressUpdate = this.containerAppExists &&
-            this.util.isNullOrEmpty(this.targetPort) &&
+            // this.util.isNullOrEmpty(this.targetPort) &&
             (this.util.isNullOrEmpty(this.ingress) || this.ingress == 'disabled');
 
         // Pass the Container Registry credentials when creating a Container App or updating a Container App via the 'up' command
